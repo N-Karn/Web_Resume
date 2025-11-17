@@ -1,0 +1,1132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Nicholas Karn | Business Analyst & Reporting Specialist</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description"
+        content="Portfolio of Nicholas (Nick) Karn – Business Analyst & Reporting Specialist focused on data, reporting, and process improvement." />
+  <style>
+    :root {
+      --bg: #050816;
+      --bg-alt: #0b1020;
+      --card: #10172f;
+      --accent: #38bdf8;
+      --accent-soft: rgba(56, 189, 248, 0.1);
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --danger: #f97373;
+      --radius-lg: 18px;
+      --radius-xl: 26px;
+      --shadow-soft: 0 18px 40px rgba(15, 23, 42, 0.8);
+      --transition-fast: 160ms ease-out;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top left, #1e293b 0, #020617 40%, #000 100%);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .shell {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 1.25rem 1.25rem 4rem;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      backdrop-filter: blur(18px);
+      background: linear-gradient(to bottom, rgba(2, 6, 23, 0.95), transparent);
+      border-bottom: 1px solid rgba(148, 163, 184, 0.15);
+    }
+
+    .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0.75rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+    }
+
+    .brand-logo {
+      width: 32px;
+      height: 32px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 30% 20%, #e5e7eb, #0f172a);
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: #020617;
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.7);
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-text span:first-child {
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    .brand-text span:last-child {
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.25rem;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .nav-links a {
+      position: relative;
+      padding-bottom: 0.1rem;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -0.25rem;
+      width: 0;
+      height: 1.5px;
+      background: linear-gradient(to right, var(--accent), #a855f7);
+      transition: width var(--transition-fast);
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    /* Hero */
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2.2fr);
+      gap: 2.5rem;
+      align-items: center;
+      margin-top: 2.5rem;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.78rem;
+      padding: 0.2rem 0.6rem;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      border: 1px solid rgba(56, 189, 248, 0.4);
+      margin-bottom: 0.75rem;
+    }
+
+    .badge-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: #22c55e;
+      box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.15);
+    }
+
+    h1 {
+      font-size: clamp(2.25rem, 4vw, 2.9rem);
+      line-height: 1.1;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-title-accent {
+      background: linear-gradient(to right, #e5e7eb, var(--accent));
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .hero-subtitle {
+      font-size: 0.98rem;
+      color: var(--muted);
+      max-width: 32rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-subtitle strong {
+      color: #e5e7eb;
+      font-weight: 600;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      padding: 0.55rem 1.1rem;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      font-size: 0.85rem;
+      cursor: pointer;
+      background: none;
+      color: inherit;
+      transition: background var(--transition-fast),
+                  transform var(--transition-fast),
+                  box-shadow var(--transition-fast),
+                  border-color var(--transition-fast);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), #a855f7);
+      color: #020617;
+      font-weight: 600;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 22px 50px rgba(15, 23, 42, 0.95);
+    }
+
+    .btn-ghost {
+      border-color: rgba(148, 163, 184, 0.4);
+      background: rgba(15, 23, 42, 0.8);
+      color: var(--muted);
+    }
+
+    .btn-ghost:hover {
+      background: rgba(15, 23, 42, 0.95);
+      border-color: rgba(148, 163, 184, 0.7);
+    }
+
+    .btn-icon {
+      font-size: 1rem;
+    }
+
+    .hero-meta {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.75rem;
+      max-width: 26rem;
+    }
+
+    .hero-meta-item {
+      background: rgba(15, 23, 42, 0.85);
+      border-radius: 999px;
+      padding: 0.5rem 0.8rem;
+      font-size: 0.75rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.1rem;
+      border: 1px solid rgba(148, 163, 184, 0.3);
+    }
+
+    .hero-meta-item span:first-child {
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      font-size: 0.68rem;
+    }
+
+    .hero-meta-item span:last-child {
+      font-weight: 600;
+      font-size: 0.85rem;
+    }
+
+    .hero-card {
+      background: radial-gradient(circle at top, #1e293b, #020617);
+      border-radius: var(--radius-xl);
+      padding: 1.4rem;
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      box-shadow: var(--shadow-soft);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at top right,
+                  rgba(56, 189, 248, 0.2),
+                  transparent 55%);
+      mix-blend-mode: screen;
+      opacity: 0.9;
+      pointer-events: none;
+    }
+
+    .hero-tagline {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-bottom: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    .hero-highlight {
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero-highlight strong {
+      color: var(--accent);
+    }
+
+    .hero-list {
+      list-style: none;
+      font-size: 0.82rem;
+      color: var(--muted);
+      display: grid;
+      gap: 0.4rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero-list li::before {
+      content: "◆";
+      color: var(--accent);
+      font-size: 0.65rem;
+      margin-right: 0.4rem;
+    }
+
+    .hero-footnote {
+      font-size: 0.75rem;
+      color: var(--muted);
+      border-top: 1px solid rgba(148, 163, 184, 0.3);
+      padding-top: 0.6rem;
+    }
+
+    section {
+      margin-top: 3.5rem;
+    }
+
+    .section-label {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--muted);
+      margin-bottom: 0.25rem;
+    }
+
+    .section-title {
+      font-size: 1.35rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .section-description {
+      font-size: 0.9rem;
+      color: var(--muted);
+      max-width: 36rem;
+      margin-bottom: 1.5rem;
+    }
+
+    /* About */
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2.3fr);
+      gap: 2rem;
+    }
+
+    .pill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .pill {
+      font-size: 0.78rem;
+      padding: 0.25rem 0.7rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      color: var(--muted);
+      background: rgba(15, 23, 42, 0.85);
+    }
+
+    .about-card {
+      background: var(--bg-alt);
+      border-radius: var(--radius-lg);
+      padding: 1rem 1.1rem;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      font-size: 0.84rem;
+      color: var(--muted);
+    }
+
+    .about-card strong {
+      color: var(--text);
+    }
+
+    /* Skills */
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+    }
+
+    .skill-card {
+      background: var(--card);
+      border-radius: var(--radius-lg);
+      padding: 1rem;
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      font-size: 0.84rem;
+    }
+
+    .skill-card h3 {
+      font-size: 0.95rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .skill-items {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      margin-top: 0.4rem;
+    }
+
+    .skill-chip {
+      font-size: 0.74rem;
+      padding: 0.18rem 0.5rem;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      color: var(--muted);
+    }
+
+    /* Experience */
+
+    .timeline {
+      border-left: 1px solid rgba(148, 163, 184, 0.35);
+      margin-top: 0.5rem;
+      padding-left: 1.5rem;
+      display: grid;
+      gap: 1.4rem;
+      font-size: 0.84rem;
+    }
+
+    .timeline-item {
+      position: relative;
+    }
+
+    .timeline-bullet {
+      position: absolute;
+      left: -1.65rem;
+      top: 0.35rem;
+      width: 11px;
+      height: 11px;
+      border-radius: 999px;
+      background: var(--bg);
+      border: 2px solid var(--accent);
+      box-shadow: 0 0 0 4px rgba(56, 189, 248, 0.15);
+    }
+
+    .timeline-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 0.3rem;
+      margin-bottom: 0.1rem;
+    }
+
+    .timeline-title {
+      font-weight: 600;
+    }
+
+    .timeline-meta {
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+
+    .timeline-body {
+      color: var(--muted);
+      margin-top: 0.25rem;
+    }
+
+    .timeline-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.3rem;
+      margin-top: 0.4rem;
+    }
+
+    .timeline-tag {
+      font-size: 0.7rem;
+      padding: 0.15rem 0.45rem;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(148, 163, 184, 0.45);
+      color: var(--muted);
+    }
+
+    /* Projects */
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .project-card {
+      background: var(--card);
+      border-radius: var(--radius-lg);
+      padding: 1rem;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      font-size: 0.84rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .project-chip {
+      font-size: 0.75rem;
+      padding: 0.15rem 0.6rem;
+      border-radius: 999px;
+      border: 1px solid rgba(56, 189, 248, 0.5);
+      color: var(--accent);
+      align-self: flex-start;
+      background: rgba(15, 23, 42, 0.9);
+    }
+
+    .project-title {
+      font-size: 0.98rem;
+      font-weight: 600;
+    }
+
+    .project-meta {
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    .project-impact {
+      font-size: 0.8rem;
+      color: var(--text);
+    }
+
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.3rem;
+      margin-top: 0.2rem;
+    }
+
+    .project-tag {
+      font-size: 0.72rem;
+      padding: 0.13rem 0.45rem;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      color: var(--muted);
+    }
+
+    /* Impact strip */
+
+    .impact-strip {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 0.9rem;
+      margin-top: 0.4rem;
+    }
+
+    .impact-item {
+      background: rgba(15, 23, 42, 0.92);
+      border-radius: var(--radius-lg);
+      padding: 0.7rem 0.8rem;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      font-size: 0.78rem;
+    }
+
+    .impact-item strong {
+      display: block;
+      font-size: 1.05rem;
+      margin-bottom: 0.1rem;
+    }
+
+    /* Contact */
+
+    .contact-card {
+      background: var(--card);
+      border-radius: var(--radius-xl);
+      padding: 1.3rem 1.1rem;
+      border: 1px solid rgba(148, 163, 184, 0.45);
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2.1fr);
+      gap: 1.5rem;
+      font-size: 0.86rem;
+    }
+
+    .contact-note {
+      color: var(--muted);
+      margin-top: 0.4rem;
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 0.5rem;
+      font-size: 0.83rem;
+    }
+
+    .contact-item {
+      display: flex;
+      justify-content: space-between;
+      gap: 0.75rem;
+      align-items: center;
+      padding: 0.55rem 0.75rem;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.96);
+      border: 1px solid rgba(148, 163, 184, 0.45);
+    }
+
+    .contact-label {
+      color: var(--muted);
+      font-size: 0.76rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    .contact-value {
+      font-weight: 500;
+      font-size: 0.85rem;
+    }
+
+    footer {
+      margin-top: 2.75rem;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(148, 163, 184, 0.25);
+      font-size: 0.75rem;
+      color: var(--muted);
+      text-align: center;
+      padding-bottom: 1.5rem;
+    }
+
+    /* Responsive tweaks */
+
+    @media (max-width: 880px) {
+      .hero {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .hero-card {
+        order: -1;
+      }
+
+      .about-grid,
+      .contact-card {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .shell {
+        padding-inline: 1rem;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .hero-meta {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      section {
+        margin-top: 3rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div class="nav-inner">
+        <div class="brand">
+          <div class="brand-logo">NK</div>
+          <div class="brand-text">
+            <span>Nicholas Karn</span>
+            <span>Business Analyst & Reporting Specialist</span>
+          </div>
+        </div>
+        <nav class="nav-links">
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#experience">Experience</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="shell">
+      <!-- Hero -->
+      <section class="hero">
+        <div>
+          <div class="badge">
+            <span class="badge-dot"></span>
+            Open to Business Analyst & Reporting roles
+          </div>
+          <h1>
+            Turning messy<br />
+            data into <span class="hero-title-accent">clear decisions.</span>
+          </h1>
+          <p class="hero-subtitle">
+            I’m <strong>Nicholas (Nick) Karn</strong>, a
+            <strong>Business Analyst and Reporting Specialist</strong> with a
+            background in requirements gathering, stakeholder collaboration, and
+            data-driven process improvement. I bridge <strong>schools, state
+            agencies, and engineers</strong> to deliver accurate reporting,
+            cleaner workflows, and fewer last-minute fire drills.
+          </p>
+
+          <div class="hero-actions">
+            <!-- Resume PDF should sit next to this HTML file -->
+            <a class="btn btn-primary"
+               href="Nicholas_Karn_Resume.pdf"
+               target="_blank" rel="noreferrer">
+              View résumé (PDF)
+              <span class="btn-icon">↗</span>
+            </a>
+
+            <a class="btn btn-ghost"
+               href="https://www.linkedin.com/in/nicholas-karn-51336615a/"
+               target="_blank" rel="noreferrer">
+              LinkedIn
+              <span class="btn-icon">💼</span>
+            </a>
+
+            <button class="btn btn-ghost" id="copyEmailBtn" type="button">
+              Copy email
+              <span class="btn-icon">📋</span>
+            </button>
+          </div>
+
+          <div class="hero-meta">
+            <div class="hero-meta-item">
+              <span>Experience</span>
+              <span>Reporting & state data since 2019</span>
+            </div>
+            <div class="hero-meta-item">
+              <span>Sweet spot</span>
+              <span>Business rules ⇄ Data ⇄ Dev teams</span>
+            </div>
+            <div class="hero-meta-item">
+              <span>Location</span>
+              <span>Vancouver, WA · Remote-friendly</span>
+            </div>
+          </div>
+        </div>
+
+        <aside class="hero-card" aria-label="Snapshot of how I work">
+          <p class="hero-tagline">HOW I ADD VALUE</p>
+          <p class="hero-highlight">
+            <strong>I make compliance less painful.</strong> I design reporting
+            solutions, debug critical data issues, and keep schools aligned with
+            state education data systems.
+          </p>
+          <ul class="hero-list">
+            <li>Gather and clarify requirements with stakeholders.</li>
+            <li>Translate complex reporting rules into structured workflows.</li>
+            <li>Work with SQL, MongoDB, APIs, and QA tools to validate fixes.</li>
+          </ul>
+          <p class="hero-footnote">
+            Ideal roles: Business Analyst · Reporting Analyst · Implementation
+            Specialist · Product-adjacent data roles.
+          </p>
+        </aside>
+      </section>
+
+      <!-- About -->
+      <section id="about">
+        <p class="section-label">About</p>
+        <h2 class="section-title">Who I am in one minute.</h2>
+        <p class="section-description">
+          I enjoy living at the intersection of <strong>business needs, data,
+          and technical implementation</strong>. Give me a vague “our reports
+          are wrong” problem, and I’ll help turn it into clear logic, repeatable
+          checks, and a plan engineers can ship against.
+        </p>
+        <div class="about-grid">
+          <div>
+            <p style="font-size: 0.9rem; margin-bottom: 0.9rem;">
+              As a <strong>Senior Reporting Analyst at Alma Technologies</strong>,
+              I partner with schools and state agencies to ensure submissions are
+              accurate, compliant, and on time. That means working across
+              <strong>SQL, MongoDB, REST APIs, Jira, and Postman</strong> while
+              keeping non-technical stakeholders in the loop.
+            </p>
+            <p style="font-size: 0.9rem; margin-bottom: 0.9rem;">
+              Before that, I worked in <strong>on-site customer service and
+              inventory management</strong>, which taught me how operations,
+              logistics, and people all collide in the real world.
+            </p>
+            <p style="font-size: 0.9rem; margin-bottom: 0.9rem;">
+              On any given day I might be:
+            </p>
+            <ul class="hero-list" style="margin-bottom: 1.1rem;">
+              <li>Meeting with stakeholders to define and refine reporting needs.</li>
+              <li>Debugging critical data issues that could impact funding or fines.</li>
+              <li>Writing clear specs, mapping documents, and QA notes for engineers.</li>
+            </ul>
+            <p style="font-size: 0.9rem;">
+              I like systems that are a bit messy – multiple data sources, legacy
+              rules, tight deadlines – and leaving them more predictable and
+              maintainable than I found them.
+            </p>
+          </div>
+
+          <div>
+            <div class="about-card">
+              <strong>Quick snapshot</strong>
+              <p style="margin-top: 0.35rem;">
+                • Title: Senior Reporting Analyst / Business Analyst<br />
+                • Domain: K-12 Ed-Tech, state reporting, SIS data<br />
+                • Tools: SQL, MongoDB, REST APIs, Jira, Postman<br />
+                • Focus: Requirements, compliance reporting, debugging & QA
+              </p>
+            </div>
+            <div style="height: 0.5rem;"></div>
+            <div class="pill-list">
+              <span class="pill">Business analysis</span>
+              <span class="pill">Requirements gathering</span>
+              <span class="pill">Compliance reporting</span>
+              <span class="pill">Root cause analysis</span>
+              <span class="pill">Stakeholder communication</span>
+              <span class="pill">Process optimization</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Skills -->
+      <section id="skills">
+        <p class="section-label">Skills</p>
+        <h2 class="section-title">What I work with.</h2>
+        <p class="section-description">
+          These are the tools and capabilities I actually use day-to-day across
+          reporting, analysis, and implementation work.
+        </p>
+        <div class="skills-grid">
+          <article class="skill-card">
+            <h3>Business analysis & requirements</h3>
+            <p>
+              Turning stakeholder needs into clear workflows, mapping rules, and
+              tasks that engineers can build and QA can verify.
+            </p>
+            <div class="skill-items">
+              <span class="skill-chip">Business analysis</span>
+              <span class="skill-chip">Requirements gathering</span>
+              <span class="skill-chip">Stakeholder management</span>
+              <span class="skill-chip">Workflow & process mapping</span>
+              <span class="skill-chip">Impact analysis</span>
+            </div>
+          </article>
+
+          <article class="skill-card">
+            <h3>Data & technical tools</h3>
+            <p>
+              Comfortable jumping down into the data layer to validate behavior,
+              debug edge cases, and support implementations.
+            </p>
+            <div class="skill-items">
+              <span class="skill-chip">SQL</span>
+              <span class="skill-chip">MongoDB</span>
+              <span class="skill-chip">Data validation & reporting</span>
+              <span class="skill-chip">API integrations</span>
+              <span class="skill-chip">REST & Postman</span>
+              <span class="skill-chip">Python (learning)</span>
+            </div>
+          </article>
+
+          <article class="skill-card">
+            <h3>Delivery & collaboration</h3>
+            <p>
+              Keeping projects moving with clear communication and tight
+              feedback loops between customers and engineering.
+            </p>
+            <div class="skill-items">
+              <span class="skill-chip">Jira</span>
+              <span class="skill-chip">Agile & Scrum practices</span>
+              <span class="skill-chip">QA & defect triage</span>
+              <span class="skill-chip">Customer communication</span>
+              <span class="skill-chip">Issue resolution</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Experience -->
+      <section id="experience">
+        <p class="section-label">Experience</p>
+        <h2 class="section-title">Recent roles & focus.</h2>
+        <p class="section-description">
+          A quick look at how I’ve been spending my time and where I’ve driven
+          the most impact recently.
+        </p>
+
+        <div class="timeline">
+          <article class="timeline-item">
+            <div class="timeline-bullet"></div>
+            <div class="timeline-header">
+              <div class="timeline-title">Senior Reporting Analyst</div>
+              <div class="timeline-meta">Alma Technologies · Portland, OR · Mar 2019 – Present</div>
+            </div>
+            <div class="timeline-body">
+              Partner with stakeholders to design reporting solutions that align
+              SIS data with <strong>state education data systems</strong>. Debug
+              and resolve critical data issues to prevent <strong>funding losses
+              and fines</strong> for schools, while collaborating with engineers
+              on SQL, MongoDB, and API-driven fixes.
+            </div>
+            <div class="timeline-tags">
+              <span class="timeline-tag">State reporting</span>
+              <span class="timeline-tag">Compliance</span>
+              <span class="timeline-tag">SQL & MongoDB</span>
+              <span class="timeline-tag">REST APIs & Postman</span>
+              <span class="timeline-tag">Jira & Agile</span>
+            </div>
+          </article>
+
+          <article class="timeline-item">
+            <div class="timeline-bullet"></div>
+            <div class="timeline-header">
+              <div class="timeline-title">On-Site Customer Service Representative</div>
+              <div class="timeline-meta">Mallory Safety and Supply · Vancouver, WA · Jul 2016 – Mar 2019</div>
+            </div>
+            <div class="timeline-body">
+              Delivered frontline customer service and product support, managed
+              inventory forecasting and stock accuracy, and built strong
+              customer relationships while resolving service and order issues.
+              Supported process improvements that improved operational
+              efficiency and customer satisfaction.
+            </div>
+            <div class="timeline-tags">
+              <span class="timeline-tag">Customer service</span>
+              <span class="timeline-tag">Inventory & forecasting</span>
+              <span class="timeline-tag">Process improvement</span>
+              <span class="timeline-tag">Stakeholder communication</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Projects -->
+      <section id="projects">
+        <p class="section-label">Selected work</p>
+        <h2 class="section-title">Examples of how I think.</h2>
+        <p class="section-description">
+          These aren’t side-projects so much as representative slices of the kind
+          of work I do around reporting, compliance, and debugging.
+        </p>
+
+        <div class="projects-grid">
+          <article class="project-card">
+            <span class="project-chip">Compliance & reporting</span>
+            <h3 class="project-title">State education reporting workflow</h3>
+            <p class="project-meta">
+              Partnered with stakeholders to design reporting workflows that align
+              Alma SIS data with state education data systems.
+            </p>
+            <p class="project-impact">
+              Result: reduced last-minute submission issues and helped schools
+              avoid potential fines and funding losses by tightening data
+              validation and submission logic.
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">Requirements gathering</span>
+              <span class="project-tag">Compliance reporting</span>
+              <span class="project-tag">Workflow design</span>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <span class="project-chip">Debugging & data</span>
+            <h3 class="project-title">Critical data issue remediation</h3>
+            <p class="project-meta">
+              Investigated and resolved complex data defects across SQL,
+              MongoDB, and API integrations impacting key reports.
+            </p>
+            <p class="project-impact">
+              Result: restored accurate reporting for impacted schools, prevented
+              revenue risk, and provided engineers with clear root-cause analysis
+              and acceptance criteria for long-term fixes.
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">Root cause analysis</span>
+              <span class="project-tag">Data validation</span>
+              <span class="project-tag">Issue resolution</span>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <span class="project-chip">Process & tooling</span>
+            <h3 class="project-title">Jira & QA workflow optimization</h3>
+            <p class="project-meta">
+              Used Jira and Postman to structure requirements, validate APIs,
+              and streamline QA workflows for reporting-related changes.
+            </p>
+            <p class="project-impact">
+              Result: improved visibility into reporting work, faster validation
+              cycles, and fewer surprises heading into state reporting deadlines.
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">Jira</span>
+              <span class="project-tag">Postman</span>
+              <span class="project-tag">QA & UAT</span>
+              <span class="project-tag">Agile practices</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Impact -->
+      <section>
+        <p class="section-label">Impact snapshot</p>
+        <h2 class="section-title">How I like to be measured.</h2>
+        <p class="section-description">
+          The specific KPIs change by team, but these are the outcomes I aim to
+          influence wherever I work.
+        </p>
+        <div class="impact-strip">
+          <div class="impact-item">
+            <strong>Fewer fire drills</strong>
+            Fewer last-minute reporting crises through earlier checks, clearer
+            requirements, and better collaboration with engineers.
+          </div>
+          <div class="impact-item">
+            <strong>Cleaner data</strong>
+            More accurate submissions and dashboards by catching data issues,
+            validating edge cases, and tightening workflows.
+          </div>
+          <div class="impact-item">
+            <strong>Happier stakeholders</strong>
+            Stakeholders who understand what’s happening, why it matters, and
+            how fixes will protect funding and compliance.
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section id="contact">
+        <p class="section-label">Contact</p>
+        <h2 class="section-title">Let’s talk.</h2>
+        <p class="section-description">
+          If my background lines up with what you’re building, I’d be happy to
+          talk through how I can help. Email is usually best, but phone and
+          LinkedIn both work.
+        </p>
+        <div class="contact-card">
+          <div>
+            <p><strong>How I work best</strong></p>
+            <p class="contact-note">
+              I like clear expectations, pragmatic scoping, and shared
+              definitions of “done.” Tell me the problem, constraints, and
+              stakeholders, and I’ll help connect the dots between data,
+              systems, and people.
+            </p>
+          </div>
+          <div class="contact-list">
+            <div class="contact-item">
+              <div>
+                <div class="contact-label">Email</div>
+                <div class="contact-value" id="emailValue">
+                  nicholas_karn@yahoo.com
+                </div>
+              </div>
+              <span style="font-size: 1rem;">✉️</span>
+            </div>
+
+            <div class="contact-item">
+              <div>
+                <div class="contact-label">Phone</div>
+                <div class="contact-value">
+                  360-334-2363
+                </div>
+              </div>
+              <span style="font-size: 1rem;">📞</span>
+            </div>
+
+            <a class="contact-item"
+               href="https://www.linkedin.com/in/nicholas-karn-51336615a/"
+               target="_blank" rel="noreferrer">
+              <div>
+                <div class="contact-label">LinkedIn</div>
+                <div class="contact-value">
+                  linkedin.com/in/nicholas-karn-51336615a
+                </div>
+              </div>
+              <span style="font-size: 1rem;">↗</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <footer>
+        Built by Nicholas Karn · This page is intentionally simple, fast, and recruiter-friendly.
+      </footer>
+    </main>
+  </div>
+
+  <script>
+    // Simple "copy email" helper
+    document.getElementById("copyEmailBtn")?.addEventListener("click", function () {
+      const emailText = document.getElementById("emailValue")?.textContent?.trim();
+      if (!emailText) return;
+
+      navigator.clipboard?.writeText(emailText).then(
+        () => {
+          this.textContent = "Copied!";
+          setTimeout(() => {
+            this.textContent = "Copy email";
+          }, 1200);
+        },
+        () => {
+          alert("Email: " + emailText);
+        }
+      );
+    });
+  </script>
+</body>
+</html>
