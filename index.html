@@ -6,19 +6,41 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description"
         content="Portfolio of Nicholas (Nick) Karn – Business Analyst & Reporting Specialist focused on data, reporting, and process improvement." />
+
+  <!-- SEO: structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Nicholas Karn",
+    "jobTitle": "Business Analyst & Reporting Specialist",
+    "url": "https://n-karn.github.io/Web_Resume/",
+    "sameAs": [
+      "https://www.linkedin.com/in/nicholas-karn-51336615a/"
+    ],
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Vancouver",
+      "addressRegion": "WA",
+      "addressCountry": "US"
+    },
+    "description": "Business Analyst and Reporting Specialist who turns messy data and vague requirements into clear, reliable reporting and better decisions."
+  }
+  </script>
+
   <style>
     :root {
-      --bg: #050816;
-      --bg-alt: #0b1020;
-      --card: #10172f;
-      --accent: #38bdf8;
-      --accent-soft: rgba(56, 189, 248, 0.1);
-      --text: #e5e7eb;
-      --muted: #9ca3af;
-      --danger: #f97373;
+      --bg: #f3f4f6;
+      --bg-alt: #ffffff;
+      --card: #ffffff;
+      --accent: #6366f1;
+      --accent-soft: rgba(99, 102, 241, 0.08);
+      --text: #111827;
+      --muted: #4b5563;
+      --danger: #ef4444;
       --radius-lg: 18px;
       --radius-xl: 26px;
-      --shadow-soft: 0 18px 40px rgba(15, 23, 42, 0.8);
+      --shadow-soft: 0 18px 40px rgba(15, 23, 42, 0.12);
       --transition-fast: 160ms ease-out;
     }
 
@@ -30,10 +52,14 @@
 
     body {
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: radial-gradient(circle at top left, #1e293b 0, #020617 40%, #000 100%);
+      background: radial-gradient(circle at top, #e5e7eb 0, #f9fafb 45%, #e5e7eb 100%);
       color: var(--text);
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
+    }
+
+    body.fun-mode {
+      background: radial-gradient(circle at top, #fee2e2 0, #f9fafb 50%, #e0f2fe 100%);
     }
 
     a {
@@ -63,8 +89,8 @@
       top: 0;
       z-index: 40;
       backdrop-filter: blur(18px);
-      background: linear-gradient(to bottom, rgba(2, 6, 23, 0.95), transparent);
-      border-bottom: 1px solid rgba(148, 163, 184, 0.15);
+      background: linear-gradient(to bottom, rgba(249, 250, 251, 0.96), transparent);
+      border-bottom: 1px solid rgba(148, 163, 184, 0.4);
     }
 
     .nav-inner {
@@ -87,15 +113,15 @@
       width: 32px;
       height: 32px;
       border-radius: 999px;
-      background: radial-gradient(circle at 30% 20%, #e5e7eb, #0f172a);
-      border: 1px solid rgba(148, 163, 184, 0.4);
+      background: radial-gradient(circle at 30% 20%, #6366f1, #111827);
+      border: 1px solid rgba(148, 163, 184, 0.6);
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 0.9rem;
       font-weight: 700;
-      color: #020617;
-      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.7);
+      color: #f9fafb;
+      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.3);
     }
 
     .brand-text {
@@ -106,11 +132,19 @@
     .brand-text span:first-child {
       font-weight: 600;
       font-size: 0.95rem;
+      color: var(--text);
     }
 
     .brand-text span:last-child {
       font-size: 0.78rem;
       color: var(--muted);
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-left: auto;
     }
 
     .nav-links {
@@ -132,12 +166,42 @@
       bottom: -0.25rem;
       width: 0;
       height: 1.5px;
-      background: linear-gradient(to right, var(--accent), #a855f7);
+      background: linear-gradient(to right, var(--accent), #ec4899);
       transition: width var(--transition-fast);
     }
 
     .nav-links a:hover::after {
       width: 100%;
+    }
+
+    .mode-toggle {
+      font-size: 0.75rem;
+      padding: 0.3rem 0.8rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      background: rgba(255, 255, 255, 0.9);
+      color: var(--muted);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      transition:
+        background var(--transition-fast),
+        border-color var(--transition-fast),
+        transform var(--transition-fast),
+        box-shadow var(--transition-fast);
+    }
+
+    .mode-toggle span {
+      font-size: 0.8rem;
+    }
+
+    body.fun-mode .mode-toggle {
+      background: #fef3c7;
+      border-color: #f97316;
+      color: #92400e;
+      transform: translateY(-1px);
+      box-shadow: 0 10px 20px rgba(249, 115, 22, 0.2);
     }
 
     /* Hero */
@@ -159,7 +223,7 @@
       border-radius: 999px;
       background: var(--accent-soft);
       color: var(--accent);
-      border: 1px solid rgba(56, 189, 248, 0.4);
+      border: 1px solid rgba(99, 102, 241, 0.5);
       margin-bottom: 0.75rem;
     }
 
@@ -168,17 +232,24 @@
       height: 7px;
       border-radius: 999px;
       background: #22c55e;
-      box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.15);
+      box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.18);
+    }
+
+    body.fun-mode .badge {
+      background: rgba(254, 215, 170, 0.5);
+      color: #c2410c;
+      border-color: rgba(249, 115, 22, 0.7);
     }
 
     h1 {
       font-size: clamp(2.25rem, 4vw, 2.9rem);
       line-height: 1.1;
       margin-bottom: 0.75rem;
+      color: var(--text);
     }
 
     .hero-title-accent {
-      background: linear-gradient(to right, #e5e7eb, var(--accent));
+      background: linear-gradient(to right, #111827, var(--accent));
       -webkit-background-clip: text;
       color: transparent;
     }
@@ -191,7 +262,7 @@
     }
 
     .hero-subtitle strong {
-      color: #e5e7eb;
+      color: var(--text);
       font-weight: 600;
     }
 
@@ -214,33 +285,34 @@
       cursor: pointer;
       background: none;
       color: inherit;
-      transition: background var(--transition-fast),
-                  transform var(--transition-fast),
-                  box-shadow var(--transition-fast),
-                  border-color var(--transition-fast);
+      transition:
+        background var(--transition-fast),
+        transform var(--transition-fast),
+        box-shadow var(--transition-fast),
+        border-color var(--transition-fast);
     }
 
     .btn-primary {
-      background: linear-gradient(135deg, var(--accent), #a855f7);
-      color: #020617;
+      background: linear-gradient(135deg, var(--accent), #ec4899);
+      color: #f9fafb;
       font-weight: 600;
       box-shadow: var(--shadow-soft);
     }
 
     .btn-primary:hover {
       transform: translateY(-1px);
-      box-shadow: 0 22px 50px rgba(15, 23, 42, 0.95);
+      box-shadow: 0 22px 40px rgba(15, 23, 42, 0.22);
     }
 
     .btn-ghost {
-      border-color: rgba(148, 163, 184, 0.4);
-      background: rgba(15, 23, 42, 0.8);
+      border-color: rgba(148, 163, 184, 0.6);
+      background: rgba(255, 255, 255, 0.85);
       color: var(--muted);
     }
 
     .btn-ghost:hover {
-      background: rgba(15, 23, 42, 0.95);
-      border-color: rgba(148, 163, 184, 0.7);
+      background: #ffffff;
+      border-color: rgba(99, 102, 241, 0.7);
     }
 
     .btn-icon {
@@ -255,14 +327,14 @@
     }
 
     .hero-meta-item {
-      background: rgba(15, 23, 42, 0.85);
+      background: rgba(255, 255, 255, 0.9);
       border-radius: 999px;
       padding: 0.5rem 0.8rem;
       font-size: 0.75rem;
       display: flex;
       flex-direction: column;
       gap: 0.1rem;
-      border: 1px solid rgba(148, 163, 184, 0.3);
+      border: 1px solid rgba(148, 163, 184, 0.6);
     }
 
     .hero-meta-item span:first-child {
@@ -275,13 +347,14 @@
     .hero-meta-item span:last-child {
       font-weight: 600;
       font-size: 0.85rem;
+      color: var(--text);
     }
 
     .hero-card {
-      background: radial-gradient(circle at top, #1e293b, #020617);
+      background: var(--card);
       border-radius: var(--radius-xl);
       padding: 1.4rem;
-      border: 1px solid rgba(148, 163, 184, 0.35);
+      border: 1px solid rgba(148, 163, 184, 0.6);
       box-shadow: var(--shadow-soft);
       position: relative;
       overflow: hidden;
@@ -292,16 +365,21 @@
       position: absolute;
       inset: 0;
       background: radial-gradient(circle at top right,
-                  rgba(56, 189, 248, 0.2),
-                  transparent 55%);
-      mix-blend-mode: screen;
+                  rgba(129, 140, 248, 0.22),
+                  transparent 60%);
       opacity: 0.9;
       pointer-events: none;
+    }
+
+    .hero-card > * {
+      position: relative;
+      z-index: 1;
     }
 
     .hero-tagline {
       font-size: 0.8rem;
       color: var(--muted);
+      margin-top: 0.6rem;
       margin-bottom: 0.8rem;
       text-transform: uppercase;
       letter-spacing: 0.12em;
@@ -310,6 +388,7 @@
     .hero-highlight {
       font-size: 0.95rem;
       margin-bottom: 1rem;
+      color: var(--text);
     }
 
     .hero-highlight strong {
@@ -335,8 +414,160 @@
     .hero-footnote {
       font-size: 0.75rem;
       color: var(--muted);
-      border-top: 1px solid rgba(148, 163, 184, 0.3);
+      border-top: 1px solid rgba(148, 163, 184, 0.5);
       padding-top: 0.6rem;
+    }
+
+    /* Avatar widget */
+
+.avatar-card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: var(--radius-lg);
+  padding: 0.9rem 1rem;
+  border: 1px solid rgba(148, 163, 184, 0.8);
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  margin-bottom: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* NEW avatar styles */
+
+.avatar-visual {
+  width: 72px;
+  height: 72px;
+  border-radius: 999px;
+  background: conic-gradient(from 180deg, #22c55e, #6366f1, #ec4899, #22c55e);
+  padding: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+  box-shadow: 0 10px 20px rgba(15, 23, 42, 0.18);
+}
+
+.avatar-inner {
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  background: #ffffff;
+  overflow: hidden;
+}
+
+.avatar-inner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Speaking state: soft pulsing ring around the avatar */
+.avatar-visual.is-speaking {
+  animation: avatar-pulse 1.3s infinite;
+}
+
+@keyframes avatar-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(99, 102, 241, 0.65);
+  }
+  60% {
+    box-shadow: 0 0 0 10px rgba(129, 140, 248, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(129, 140, 248, 0);
+  }
+}
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .avatar-visual.is-speaking {
+    animation: none !important;
+  }
+}
+
+
+    .avatar-subtitle {
+      font-size: 0.75rem;
+      color: var(--muted);
+      margin-bottom: 0.15rem;
+    }
+
+    .avatar-title {
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+      color: var(--text);
+    }
+
+    .avatar-controls {
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      font-size: 0.75rem;
+      color: var(--muted);
+      flex-wrap: wrap;
+    }
+
+    .avatar-btn {
+      font-size: 0.78rem;
+      padding: 0.25rem 0.7rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      background: rgba(248, 250, 252, 0.9);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      transition:
+        background var(--transition-fast),
+        border-color var(--transition-fast),
+        transform var(--transition-fast),
+        box-shadow var(--transition-fast);
+    }
+
+    .avatar-btn:hover {
+      background: #ffffff;
+      border-color: var(--accent);
+      transform: translateY(-1px);
+      box-shadow: 0 10px 18px rgba(15, 23, 42, 0.08);
+    }
+
+    .avatar-status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: #9ca3af;
+    }
+
+    .avatar-status-text {
+      font-size: 0.72rem;
+      color: var(--muted);
+    }
+
+    .avatar-note {
+      font-size: 0.72rem;
+      color: var(--muted);
+      margin-top: 0.25rem;
+    }
+
+    .avatar-note strong {
+      color: var(--accent);
+    }
+
+    .avatar-subtitles {
+      margin-top: 0.4rem;
+      font-size: 0.78rem;
+      color: var(--muted);
+      padding: 0.4rem 0.6rem;
+      border-radius: var(--radius-lg);
+      background: rgba(249, 250, 251, 0.9);
+      border: 1px dashed rgba(148, 163, 184, 0.7);
+    }
+
+    .avatar-subtitle-line {
+      color: var(--text);
     }
 
     section {
@@ -354,6 +585,7 @@
     .section-title {
       font-size: 1.35rem;
       margin-bottom: 0.75rem;
+      color: var(--text);
     }
 
     .section-description {
@@ -361,6 +593,44 @@
       color: var(--muted);
       max-width: 36rem;
       margin-bottom: 1.5rem;
+    }
+
+    /* Recruiter TL;DR strip */
+
+    .summary-strip {
+      margin-top: 2rem;
+      background: rgba(255, 255, 255, 0.96);
+      border-radius: var(--radius-xl);
+      padding: 0.85rem 1rem;
+      border: 1px solid rgba(148, 163, 184, 0.8);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      align-items: center;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .summary-pill-label {
+      font-size: 0.76rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--muted);
+    }
+
+    .summary-pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .summary-pill {
+      padding: 0.25rem 0.7rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.8);
+      background: rgba(249, 250, 251, 0.96);
+      font-size: 0.78rem;
+      color: var(--text);
     }
 
     /* About */
@@ -381,22 +651,33 @@
       font-size: 0.78rem;
       padding: 0.25rem 0.7rem;
       border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.4);
+      border: 1px solid rgba(148, 163, 184, 0.7);
       color: var(--muted);
-      background: rgba(15, 23, 42, 0.85);
+      background: rgba(255, 255, 255, 0.9);
     }
 
     .about-card {
       background: var(--bg-alt);
       border-radius: var(--radius-lg);
       padding: 1rem 1.1rem;
-      border: 1px solid rgba(148, 163, 184, 0.4);
+      border: 1px solid rgba(148, 163, 184, 0.7);
       font-size: 0.84rem;
       color: var(--muted);
     }
 
     .about-card strong {
       color: var(--text);
+    }
+
+    .fun-only {
+      display: none;
+      font-size: 0.85rem;
+      color: #7c3aed;
+      margin-top: 0.75rem;
+    }
+
+    body.fun-mode .fun-only {
+      display: block;
     }
 
     /* Skills */
@@ -411,13 +692,15 @@
       background: var(--card);
       border-radius: var(--radius-lg);
       padding: 1rem;
-      border: 1px solid rgba(148, 163, 184, 0.35);
+      border: 1px solid rgba(148, 163, 184, 0.7);
       font-size: 0.84rem;
+      color: var(--muted);
     }
 
     .skill-card h3 {
       font-size: 0.95rem;
       margin-bottom: 0.4rem;
+      color: var(--text);
     }
 
     .skill-items {
@@ -431,20 +714,85 @@
       font-size: 0.74rem;
       padding: 0.18rem 0.5rem;
       border-radius: 999px;
-      background: rgba(15, 23, 42, 0.9);
-      border: 1px solid rgba(148, 163, 184, 0.5);
+      background: rgba(249, 250, 251, 0.9);
+      border: 1px solid rgba(148, 163, 184, 0.7);
       color: var(--muted);
+    }
+
+    /* Skill dashboard */
+
+    .skill-dashboard {
+      margin-top: 1.5rem;
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: var(--radius-xl);
+      padding: 1rem 1.1rem;
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      font-size: 0.8rem;
+      display: grid;
+      grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+      gap: 1rem;
+      color: var(--muted);
+    }
+
+    .skill-dashboard-title {
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+      color: var(--text);
+    }
+
+    .skill-meters {
+      display: grid;
+      gap: 0.45rem;
+    }
+
+    .skill-meter {
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, 3fr) auto;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .skill-meter-label {
+      color: var(--muted);
+      font-size: 0.8rem;
+    }
+
+    .skill-meter-bar {
+      position: relative;
+      height: 6px;
+      border-radius: 999px;
+      background: rgba(209, 213, 219, 0.9);
+      overflow: hidden;
+    }
+
+    .skill-meter-fill {
+      position: absolute;
+      inset: 0;
+      transform-origin: left center;
+      transform: scaleX(var(--value, 0.8));
+      background: linear-gradient(to right, var(--accent), #ec4899);
+    }
+
+    .skill-meter-value {
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    body.fun-mode .skill-dashboard {
+      border-color: rgba(249, 115, 22, 0.7);
     }
 
     /* Experience */
 
     .timeline {
-      border-left: 1px solid rgba(148, 163, 184, 0.35);
+      border-left: 1px solid rgba(148, 163, 184, 0.7);
       margin-top: 0.5rem;
       padding-left: 1.5rem;
       display: grid;
       gap: 1.4rem;
       font-size: 0.84rem;
+      color: var(--muted);
     }
 
     .timeline-item {
@@ -460,7 +808,7 @@
       border-radius: 999px;
       background: var(--bg);
       border: 2px solid var(--accent);
-      box-shadow: 0 0 0 4px rgba(56, 189, 248, 0.15);
+      box-shadow: 0 0 0 4px rgba(129, 140, 248, 0.25);
     }
 
     .timeline-header {
@@ -473,6 +821,7 @@
 
     .timeline-title {
       font-weight: 600;
+      color: var(--text);
     }
 
     .timeline-meta {
@@ -496,12 +845,186 @@
       font-size: 0.7rem;
       padding: 0.15rem 0.45rem;
       border-radius: 999px;
-      background: rgba(15, 23, 42, 0.9);
-      border: 1px solid rgba(148, 163, 184, 0.45);
+      background: rgba(249, 250, 251, 0.9);
+      border: 1px solid rgba(148, 163, 184, 0.7);
       color: var(--muted);
     }
 
-    /* Projects */
+    /* Pipeline */
+
+    .pipeline-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 2.1fr) minmax(0, 2.2fr);
+      gap: 1.5rem;
+    }
+
+    .pipeline-steps {
+      display: grid;
+      gap: 0.6rem;
+    }
+
+    .pipeline-step {
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: var(--radius-lg);
+      padding: 0.65rem 0.75rem;
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      font-size: 0.8rem;
+      cursor: pointer;
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr);
+      gap: 0.6rem;
+      align-items: center;
+      transition:
+        border-color var(--transition-fast),
+        background var(--transition-fast),
+        transform var(--transition-fast),
+        box-shadow var(--transition-fast);
+      color: var(--muted);
+    }
+
+    .pipeline-step-index {
+      width: 26px;
+      height: 26px;
+      border-radius: 999px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      background: #f9fafb;
+      border: 1px solid rgba(148, 163, 184, 0.8);
+      color: var(--muted);
+    }
+
+    .pipeline-step-main {
+      display: flex;
+      flex-direction: column;
+      gap: 0.1rem;
+    }
+
+    .pipeline-step-title {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .pipeline-step-desc {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .pipeline-step.active {
+      border-color: var(--accent);
+      background: #ffffff;
+      transform: translateY(-1px);
+      box-shadow: 0 10px 20px rgba(148, 163, 184, 0.25);
+    }
+
+    .pipeline-step.active .pipeline-step-index {
+      background: linear-gradient(to bottom right, var(--accent), #ec4899);
+      color: #f9fafb;
+      border-color: transparent;
+    }
+
+    .pipeline-diagram {
+      background: var(--card);
+      border-radius: var(--radius-xl);
+      padding: 1rem;
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+
+    .pipeline-diagram-rail {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.4rem;
+      font-size: 0.8rem;
+      margin-top: 0.75rem;
+    }
+
+    .pipeline-node {
+      flex: 1;
+      padding: 0.4rem 0.5rem;
+      border-radius: 999px;
+      text-align: center;
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      background: rgba(249, 250, 251, 0.95);
+      position: relative;
+      color: var(--muted);
+    }
+
+    .pipeline-node.active {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 1px rgba(129, 140, 248, 0.5);
+      color: var(--text);
+    }
+
+    .pipeline-arrow {
+      flex: 0 0 auto;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    /* Case study */
+
+    .case-study-card {
+      background: rgba(255, 255, 255, 0.96);
+      border-radius: var(--radius-xl);
+      padding: 1.2rem 1.2rem 1.1rem;
+      border: 1px solid rgba(148, 163, 184, 0.8);
+      display: grid;
+      gap: 0.8rem;
+      font-size: 0.86rem;
+      color: var(--muted);
+    }
+
+    .case-study-tagline {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--muted);
+    }
+
+    .case-study-title {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .case-study-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.6fr) minmax(0, 2fr);
+      gap: 1rem;
+    }
+
+    .case-study-block {
+      background: rgba(249, 250, 251, 0.9);
+      border-radius: var(--radius-lg);
+      padding: 0.75rem 0.8rem;
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      font-size: 0.84rem;
+      color: var(--muted);
+    }
+
+    .case-study-block strong {
+      display: block;
+      margin-bottom: 0.25rem;
+      color: var(--text);
+    }
+
+    .case-study-highlight {
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+
+    .case-study-highlight strong {
+      color: var(--accent);
+      display: inline;
+      margin-right: 0.15rem;
+    }
+
+    /* Projects / case studies */
 
     .projects-grid {
       display: grid;
@@ -513,28 +1036,30 @@
       background: var(--card);
       border-radius: var(--radius-lg);
       padding: 1rem;
-      border: 1px solid rgba(148, 163, 184, 0.4);
+      border: 1px solid rgba(148, 163, 184, 0.7);
       font-size: 0.84rem;
       display: flex;
       flex-direction: column;
-      gap: 0.5rem;
+      gap: 0.45rem;
       position: relative;
       overflow: hidden;
+      color: var(--muted);
     }
 
     .project-chip {
       font-size: 0.75rem;
       padding: 0.15rem 0.6rem;
       border-radius: 999px;
-      border: 1px solid rgba(56, 189, 248, 0.5);
+      border: 1px solid rgba(99, 102, 241, 0.7);
       color: var(--accent);
       align-self: flex-start;
-      background: rgba(15, 23, 42, 0.9);
+      background: rgba(249, 250, 251, 0.95);
     }
 
     .project-title {
       font-size: 0.98rem;
       font-weight: 600;
+      color: var(--text);
     }
 
     .project-meta {
@@ -558,8 +1083,8 @@
       font-size: 0.72rem;
       padding: 0.13rem 0.45rem;
       border-radius: 999px;
-      background: rgba(15, 23, 42, 0.9);
-      border: 1px solid rgba(148, 163, 184, 0.5);
+      background: rgba(249, 250, 251, 0.9);
+      border: 1px solid rgba(148, 163, 184, 0.7);
       color: var(--muted);
     }
 
@@ -573,17 +1098,108 @@
     }
 
     .impact-item {
-      background: rgba(15, 23, 42, 0.92);
+      background: rgba(255, 255, 255, 0.95);
       border-radius: var(--radius-lg);
       padding: 0.7rem 0.8rem;
-      border: 1px solid rgba(148, 163, 184, 0.4);
+      border: 1px solid rgba(148, 163, 184, 0.7);
       font-size: 0.78rem;
+      color: var(--muted);
     }
 
     .impact-item strong {
       display: block;
       font-size: 1.05rem;
       margin-bottom: 0.1rem;
+      color: var(--text);
+    }
+
+    /* Mini tools */
+
+    .tools-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1rem;
+    }
+
+    .tool-card {
+      background: var(--card);
+      border-radius: var(--radius-lg);
+      padding: 1rem;
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      font-size: 0.84rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      color: var(--muted);
+    }
+
+    .tool-card h3 {
+      font-size: 0.95rem;
+      margin-bottom: 0.1rem;
+      color: var(--text);
+    }
+
+    .tool-input-row {
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .tool-input-row input,
+    .tool-input-row select {
+      padding: 0.3rem 0.5rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.8);
+      background: rgba(249, 250, 251, 0.95);
+      color: var(--text);
+      font-size: 0.8rem;
+      min-width: 0;
+      flex: 1;
+    }
+
+    .tool-input-row button {
+      font-size: 0.78rem;
+      padding: 0.3rem 0.7rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.9);
+      background: #ffffff;
+      color: var(--muted);
+      cursor: pointer;
+      transition:
+        background var(--transition-fast),
+        border-color var(--transition-fast),
+        transform var(--transition-fast),
+        box-shadow var(--transition-fast);
+      white-space: nowrap;
+    }
+
+    .tool-input-row button:hover {
+      background: #f9fafb;
+      border-color: var(--accent);
+      transform: translateY(-1px);
+      box-shadow: 0 10px 18px rgba(15, 23, 42, 0.08);
+    }
+
+    .tool-output {
+      font-size: 0.8rem;
+      color: var(--muted);
+      padding: 0.45rem 0.6rem;
+      border-radius: var(--radius-lg);
+      background: rgba(249, 250, 251, 0.95);
+      border: 1px dashed rgba(148, 163, 184, 0.8);
+      min-height: 2.1em;
+    }
+
+    .tool-output strong {
+      color: var(--text);
+    }
+
+    .tool-label {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.11em;
+      color: var(--muted);
     }
 
     /* Contact */
@@ -592,16 +1208,43 @@
       background: var(--card);
       border-radius: var(--radius-xl);
       padding: 1.3rem 1.1rem;
-      border: 1px solid rgba(148, 163, 184, 0.45);
+      border: 1px solid rgba(148, 163, 184, 0.8);
       display: grid;
       grid-template-columns: minmax(0, 3fr) minmax(0, 2.1fr);
       gap: 1.5rem;
       font-size: 0.86rem;
+      color: var(--muted);
     }
 
     .contact-note {
       color: var(--muted);
       margin-top: 0.4rem;
+    }
+
+    .hm-card {
+      margin-top: 0.85rem;
+      background: rgba(249, 250, 251, 0.95);
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      padding: 0.7rem 0.8rem;
+      font-size: 0.8rem;
+    }
+
+    .hm-card-title {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 0.25rem;
+    }
+
+    .hm-card ul {
+      padding-left: 1rem;
+      margin: 0;
+      list-style: disc;
+    }
+
+    .hm-card li {
+      margin-bottom: 0.2rem;
     }
 
     .contact-list {
@@ -617,8 +1260,9 @@
       align-items: center;
       padding: 0.55rem 0.75rem;
       border-radius: 999px;
-      background: rgba(15, 23, 42, 0.96);
-      border: 1px solid rgba(148, 163, 184, 0.45);
+      background: rgba(249, 250, 251, 0.95);
+      border: 1px solid rgba(148, 163, 184, 0.8);
+      color: var(--text);
     }
 
     .contact-label {
@@ -631,19 +1275,18 @@
     .contact-value {
       font-weight: 500;
       font-size: 0.85rem;
+      color: var(--text);
     }
 
     footer {
       margin-top: 2.75rem;
       padding-top: 1rem;
-      border-top: 1px solid rgba(148, 163, 184, 0.25);
+      border-top: 1px solid rgba(148, 163, 184, 0.7);
       font-size: 0.75rem;
       color: var(--muted);
       text-align: center;
       padding-bottom: 1.5rem;
     }
-
-    /* Responsive tweaks */
 
     @media (max-width: 880px) {
       .hero {
@@ -655,7 +1298,9 @@
       }
 
       .about-grid,
-      .contact-card {
+      .contact-card,
+      .pipeline-grid,
+      .skill-dashboard {
         grid-template-columns: minmax(0, 1fr);
       }
 
@@ -666,6 +1311,11 @@
       .shell {
         padding-inline: 1rem;
       }
+
+      .summary-strip {
+        flex-direction: column;
+        align-items: flex-start;
+      }
     }
 
     @media (max-width: 640px) {
@@ -675,6 +1325,15 @@
 
       section {
         margin-top: 3rem;
+      }
+
+      .pipeline-diagram-rail {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .case-study-grid {
+        grid-template-columns: minmax(0, 1fr);
       }
     }
   </style>
@@ -690,13 +1349,22 @@
             <span>Business Analyst & Reporting Specialist</span>
           </div>
         </div>
-        <nav class="nav-links">
-          <a href="#about">About</a>
-          <a href="#skills">Skills</a>
-          <a href="#experience">Experience</a>
-          <a href="#projects">Projects</a>
-          <a href="#contact">Contact</a>
-        </nav>
+        <div class="nav-right">
+          <nav class="nav-links">
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#experience">Experience</a>
+            <a href="#pipeline">Data Flow</a>
+            <a href="#case-study">Case Study</a>
+            <a href="#projects">Projects</a>
+            <a href="#tools">Mini tools</a>
+            <a href="#contact">Contact</a>
+          </nav>
+          <button class="mode-toggle" id="modeToggle" type="button" aria-label="Toggle between professional and fun color modes">
+            <span>Mode:</span>
+            <span id="modeToggleLabel">Professional</span>
+          </button>
+        </div>
       </div>
     </header>
 
@@ -716,28 +1384,29 @@
             I’m <strong>Nicholas (Nick) Karn</strong>, a
             <strong>Business Analyst and Reporting Specialist</strong> with a
             background in requirements gathering, stakeholder collaboration, and
-            data-driven process improvement. I bridge <strong>schools, state
-            agencies, and engineers</strong> to deliver accurate reporting,
-            cleaner workflows, and fewer last-minute fire drills.
+            data-driven process improvement. I bridge <strong>business, data, and
+            engineering</strong> to deliver accurate reporting, cleaner workflows,
+            and fewer last-minute fire drills.
           </p>
 
           <div class="hero-actions">
-            <!-- Resume PDF should sit next to this HTML file -->
             <a class="btn btn-primary"
                href="Nicholas_Karn_Resume.pdf"
-               target="_blank" rel="noreferrer">
+               target="_blank" rel="noreferrer"
+               title="View Nicholas Karn résumé PDF">
               View résumé (PDF)
               <span class="btn-icon">↗</span>
             </a>
 
             <a class="btn btn-ghost"
                href="https://www.linkedin.com/in/nicholas-karn-51336615a/"
-               target="_blank" rel="noreferrer">
+               target="_blank" rel="noreferrer"
+               title="Open Nicholas Karn on LinkedIn">
               LinkedIn
               <span class="btn-icon">💼</span>
             </a>
 
-            <button class="btn btn-ghost" id="copyEmailBtn" type="button">
+            <button class="btn btn-ghost" id="copyEmailBtn" type="button" aria-label="Copy email address to clipboard">
               Copy email
               <span class="btn-icon">📋</span>
             </button>
@@ -746,36 +1415,90 @@
           <div class="hero-meta">
             <div class="hero-meta-item">
               <span>Experience</span>
-              <span>Reporting & state data since 2019</span>
+              <span>Reporting & data since 2019</span>
             </div>
             <div class="hero-meta-item">
-              <span>Sweet spot</span>
-              <span>Business rules ⇄ Data ⇄ Dev teams</span>
+              <span> Sweet spot </span>
+              <span> Business rules ⇄ Data ⇄ Dev teams </span>
             </div>
             <div class="hero-meta-item">
-              <span>Location</span>
-              <span>Vancouver, WA · Remote-friendly</span>
+              <span> Location </span>
+              <span> Vancouver, WA · Remote-friendly </span>
             </div>
           </div>
         </div>
 
         <aside class="hero-card" aria-label="Snapshot of how I work">
+          <!-- Avatar widget -->
+          <div class="avatar-card">
+                              <div class="avatar-visual" id="avatarVisual" aria-hidden="true">
+                                  <div class="avatar-inner">
+                                       <img
+                                             src="avatar-nick.png"
+                                             alt="Illustrated avatar of Nick wearing a cap"
+                                          />
+                                     </div>
+                                   </div>
+            <div>
+              <p class="avatar-subtitle">AI-powered intro</p>
+              <p class="avatar-title">Meet “Nick”</p>
+              <div class="avatar-controls">
+                <button
+                  class="avatar-btn"
+                  id="playIntroBtn"
+                  type="button"
+                  aria-label="Play or pause AI introduction from Nick">
+                  <span id="playIntroIcon">▶</span>
+                  <span id="playIntroLabel">Play intro</span>
+                </button>
+                <div class="avatar-status-dot" id="avatarStatusDot"></div>
+                <span class="avatar-status-text" id="avatarStatusText">Idle</span>
+              </div>
+              <p class="avatar-note">
+                <strong>This avatar is powered by AI text-to-speech</strong>
+              </p>
+              <div class="avatar-subtitles" aria-live="polite">
+                <span class="avatar-subtitle-line" id="avatarSubtitle">
+                  Welcome to my portfolio!
+                </span>
+              </div>
+            </div>
+          </div>
+
           <p class="hero-tagline">HOW I ADD VALUE</p>
           <p class="hero-highlight">
-            <strong>I make compliance less painful.</strong> I design reporting
-            solutions, debug critical data issues, and keep schools aligned with
-            state education data systems.
+            <strong>I make complexity feel manageable.</strong> I design reporting
+            solutions, debug critical data issues, and keep teams aligned around
+            the same version of the truth.
           </p>
           <ul class="hero-list">
             <li>Gather and clarify requirements with stakeholders.</li>
-            <li>Translate complex reporting rules into structured workflows.</li>
-            <li>Work with SQL, MongoDB, APIs, and QA tools to validate fixes.</li>
+            <li>Translate complex rules into structured workflows and test cases.</li>
+            <li>Work with SQL, APIs, and QA tools to validate behavior.</li>
           </ul>
           <p class="hero-footnote">
             Ideal roles: Business Analyst · Reporting Analyst · Implementation
             Specialist · Product-adjacent data roles.
           </p>
         </aside>
+      </section>
+
+      <!-- Recruiter TL;DR strip -->
+      <section aria-label="Summary for recruiters">
+        <div class="summary-strip">
+          <div>
+            <div class="summary-pill-label">TL;DR</div>
+            <div style="font-size:0.8rem; color:var(--muted);">
+              Business Analyst / Reporting Specialist · 5+ years working with data, reporting, and SaaS.
+            </div>
+          </div>
+          <div class="summary-pill-row">
+            <span class="summary-pill">Roles: Business Analyst · Reporting Analyst · Implementation Specialist</span>
+            <span class="summary-pill">Strengths: Requirements · Debugging · Stakeholder alignment</span>
+            <span class="summary-pill">Tools: SQL · APIs · Jira · Postman</span>
+            <span class="summary-pill">Status: Open to full-time · Remote/Hybrid (US)</span>
+          </div>
+        </div>
       </section>
 
       <!-- About -->
@@ -790,30 +1513,36 @@
         </p>
         <div class="about-grid">
           <div>
-            <p style="font-size: 0.9rem; margin-bottom: 0.9rem;">
+            <p style="font-size: 0.9rem; margin-bottom: 0.9rem; color: var(--muted);">
               As a <strong>Senior Reporting Analyst at Alma Technologies</strong>,
-              I partner with schools and state agencies to ensure submissions are
+              I partner with stakeholders to ensure submissions and reports are
               accurate, compliant, and on time. That means working across
-              <strong>SQL, MongoDB, REST APIs, Jira, and Postman</strong> while
-              keeping non-technical stakeholders in the loop.
+              <strong>SQL, REST APIs, Jira, and QA</strong> while keeping
+              non-technical stakeholders in the loop.
             </p>
-            <p style="font-size: 0.9rem; margin-bottom: 0.9rem;">
+            <p style="font-size: 0.9rem; margin-bottom: 0.9rem; color: var(--muted);">
               Before that, I worked in <strong>on-site customer service and
               inventory management</strong>, which taught me how operations,
               logistics, and people all collide in the real world.
             </p>
-            <p style="font-size: 0.9rem; margin-bottom: 0.9rem;">
+            <p style="font-size: 0.9rem; margin-bottom: 0.9rem; color: var(--muted);">
               On any given day I might be:
             </p>
             <ul class="hero-list" style="margin-bottom: 1.1rem;">
               <li>Meeting with stakeholders to define and refine reporting needs.</li>
-              <li>Debugging critical data issues that could impact funding or fines.</li>
+              <li>Debugging data issues that impact decision-making or compliance.</li>
               <li>Writing clear specs, mapping documents, and QA notes for engineers.</li>
             </ul>
-            <p style="font-size: 0.9rem;">
+            <p style="font-size: 0.9rem; color: var(--muted);">
               I like systems that are a bit messy – multiple data sources, legacy
               rules, tight deadlines – and leaving them more predictable and
               maintainable than I found them.
+            </p>
+
+            <p class="fun-only">
+              Fun mode: When I’m not wrestling data pipelines, I’m usually
+              hanging out with my family, tinkering with Python, or overthinking
+              whether a feature should live in a report, an API, or both.
             </p>
           </div>
 
@@ -822,16 +1551,16 @@
               <strong>Quick snapshot</strong>
               <p style="margin-top: 0.35rem;">
                 • Title: Senior Reporting Analyst / Business Analyst<br />
-                • Domain: K-12 Ed-Tech, state reporting, SIS data<br />
-                • Tools: SQL, MongoDB, REST APIs, Jira, Postman<br />
-                • Focus: Requirements, compliance reporting, debugging & QA
+                • Domain: Data & reporting, operations, SaaS<br />
+                • Tools: SQL, REST APIs, Jira, Postman, MongoDB<br />
+                • Focus: Requirements, debugging, reporting & QA
               </p>
             </div>
             <div style="height: 0.5rem;"></div>
             <div class="pill-list">
               <span class="pill">Business analysis</span>
               <span class="pill">Requirements gathering</span>
-              <span class="pill">Compliance reporting</span>
+              <span class="pill">Data & reporting</span>
               <span class="pill">Root cause analysis</span>
               <span class="pill">Stakeholder communication</span>
               <span class="pill">Process optimization</span>
@@ -895,6 +1624,48 @@
             </div>
           </article>
         </div>
+
+        <!-- Skill dashboard -->
+        <div class="skill-dashboard">
+          <div>
+            <p class="skill-dashboard-title">System health: where I’m strongest</p>
+            <p style="font-size: 0.8rem; color: var(--muted);">
+              These aren’t exact KPIs, but a rough sense of where I’m most
+              effective today. I’m happiest where analysis, data, and people
+              overlap.
+            </p>
+          </div>
+          <div class="skill-meters">
+            <div class="skill-meter">
+              <span class="skill-meter-label">Requirements & stakeholder alignment</span>
+              <div class="skill-meter-bar">
+                <div class="skill-meter-fill" style="--value: 0.95;"></div>
+              </div>
+              <span class="skill-meter-value">95%</span>
+            </div>
+            <div class="skill-meter">
+              <span class="skill-meter-label">Debugging & root cause analysis</span>
+              <div class="skill-meter-bar">
+                <div class="skill-meter-fill" style="--value: 0.92;"></div>
+              </div>
+              <span class="skill-meter-value">92%</span>
+            </div>
+            <div class="skill-meter">
+              <span class="skill-meter-label">SQL / data investigation</span>
+              <div class="skill-meter-bar">
+                <div class="skill-meter-fill" style="--value: 0.88;"></div>
+              </div>
+              <span class="skill-meter-value">88%</span>
+            </div>
+            <div class="skill-meter">
+              <span class="skill-meter-label">Python & automation (growing)</span>
+              <div class="skill-meter-bar">
+                <div class="skill-meter-fill" style="--value: 0.65;"></div>
+              </div>
+              <span class="skill-meter-value">65%</span>
+            </div>
+          </div>
+        </div>
       </section>
 
       <!-- Experience -->
@@ -915,16 +1686,14 @@
             </div>
             <div class="timeline-body">
               Partner with stakeholders to design reporting solutions that align
-              SIS data with <strong>state education data systems</strong>. Debug
-              and resolve critical data issues to prevent <strong>funding losses
-              and fines</strong> for schools, while collaborating with engineers
-              on SQL, MongoDB, and API-driven fixes.
+              operational data with business and compliance needs. Debug and
+              resolve critical data issues, and collaborate with engineers on
+              SQL, database, and API-driven fixes.
             </div>
             <div class="timeline-tags">
-              <span class="timeline-tag">State reporting</span>
-              <span class="timeline-tag">Compliance</span>
-              <span class="timeline-tag">SQL & MongoDB</span>
-              <span class="timeline-tag">REST APIs & Postman</span>
+              <span class="timeline-tag">Reporting & analytics</span>
+              <span class="timeline-tag">Requirements</span>
+              <span class="timeline-tag">SQL & APIs</span>
               <span class="timeline-tag">Jira & Agile</span>
             </div>
           </article>
@@ -952,46 +1721,192 @@
         </div>
       </section>
 
-      <!-- Projects -->
-      <section id="projects">
-        <p class="section-label">Selected work</p>
-        <h2 class="section-title">Examples of how I think.</h2>
+      <!-- Data pipeline demo -->
+      <section id="pipeline">
+        <p class="section-label">How I think</p>
+        <h2 class="section-title">From “our reports are wrong” to shipped fix.</h2>
         <p class="section-description">
-          These aren’t side-projects so much as representative slices of the kind
-          of work I do around reporting, compliance, and debugging.
+          This is a simplified view of how I usually move from a noisy problem
+          to a concrete, testable solution that engineers can implement and
+          stakeholders can trust.
+        </p>
+
+        <div class="pipeline-grid">
+          <div class="pipeline-steps" aria-label="Reporting pipeline steps">
+            <button class="pipeline-step active" data-step="1" type="button">
+              <div class="pipeline-step-index">1</div>
+              <div class="pipeline-step-main">
+                <div class="pipeline-step-title">Clarify the problem</div>
+                <div class="pipeline-step-desc">
+                  Who’s blocked? Which decisions or processes are impacted? What
+                  does “working” look like in plain language?
+                </div>
+              </div>
+            </button>
+            <button class="pipeline-step" data-step="2" type="button">
+              <div class="pipeline-step-index">2</div>
+              <div class="pipeline-step-main">
+                <div class="pipeline-step-title">Trace the data path</div>
+                <div class="pipeline-step-desc">
+                  Follow the data from source system → internal tools →
+                  reporting layer, checking transforms and business rules.
+                </div>
+              </div>
+            </button>
+            <button class="pipeline-step" data-step="3" type="button">
+              <div class="pipeline-step-index">3</div>
+              <div class="pipeline-step-main">
+                <div class="pipeline-step-title">Identify root cause</div>
+                <div class="pipeline-step-desc">
+                  Confirm what’s actually broken: data entry, mapping,
+                  edge-case logic, or export formatting.
+                </div>
+              </div>
+            </button>
+            <button class="pipeline-step" data-step="4" type="button">
+              <div class="pipeline-step-index">4</div>
+              <div class="pipeline-step-main">
+                <div class="pipeline-step-title">Design & validate the fix</div>
+                <div class="pipeline-step-desc">
+                  Write acceptance criteria and examples. Partner with
+                  engineering and QA to verify behavior and document the change.
+                </div>
+              </div>
+            </button>
+          </div>
+
+          <div class="pipeline-diagram" id="pipelineDiagram">
+            <p style="font-size: 0.83rem; color: var(--muted);">
+              Click a step on the left to see where we are in the flow. This is
+              roughly how I think about data moving through a reporting pipeline.
+            </p>
+            <div class="pipeline-diagram-rail" aria-hidden="true">
+              <div class="pipeline-node pipeline-node-source active" data-step="1">
+                Source data (operations)
+              </div>
+              <div class="pipeline-arrow">⟶</div>
+              <div class="pipeline-node pipeline-node-systems" data-step="2">
+                Systems & business rules
+              </div>
+              <div class="pipeline-arrow">⟶</div>
+              <div class="pipeline-node pipeline-node-analytics" data-step="3">
+                Analytics / reporting layer
+              </div>
+              <div class="pipeline-arrow">⟶</div>
+              <div class="pipeline-node pipeline-node-output" data-step="4">
+                Validated reports & decisions
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Featured case study -->
+<section id="case-study">
+  <p class="section-label">Featured case study</p>
+  <h2 class="section-title">Protecting school funding by fixing broken reporting data.</h2>
+  <p class="section-description">
+    A real example of how I like to work: start with a vague “something is wrong with the numbers,”
+    trace the data end-to-end, and ship a fix that protects both funding and trust.
+  </p>
+
+  <article class="case-study-card">
+    <p class="case-study-tagline">Scenario</p>
+    <h3 class="case-study-title">Catching a reporting defect before it cost an LEA real money</h3>
+
+    <div class="case-study-grid">
+      <div class="case-study-block">
+        <strong>Problem</strong>
+        One LEA flagged that their state report counts didn’t match internal expectations.
+        If submitted as-is, the bad data could have led to a loss of funding tied to
+        student membership/attendance. The issue wasn’t showing up as a single obvious
+        “bug” – it was a mix of edge cases, historical data, and unclear rules.
+      </div>
+      <div class="case-study-block">
+        <strong>Constraints</strong>
+        The reporting window was already open, the LEA needed clarity quickly, and other
+        customers were using the same logic. Any fix had to be accurate, low-risk, and
+        well-documented so support and engineering could rely on it going forward.
+      </div>
+    </div>
+
+    <div class="case-study-grid" style="margin-top:0.75rem;">
+      <div class="case-study-block">
+        <strong>What I did</strong>
+        <ul style="padding-left:1rem; margin:0;">
+          <li>Met with the LEA to clarify where the counts looked wrong and what “correct” should look like in their context.</li>
+          <li>Traced the data from the source system through to the state reporting payloads, using SQL and API samples to reproduce the issue.</li>
+          <li>Performed root cause analysis to separate true logic defects from dirty or incomplete historical data.</li>
+          <li>Documented clear requirements and business rules for how these students should be counted, including edge cases.</li>
+          <li>Partnered with engineering to clean up existing data via API-safe updates and to adjust the reporting logic going forward.</li>
+        </ul>
+      </div>
+      <div class="case-study-block">
+        <strong>Outcome</strong>
+        <p class="case-study-highlight">
+          <strong>Immediate impact:</strong> The LEA was able to submit accurate data for the current cycle,
+          avoiding a potential funding loss tied to under-reported students.
+        </p>
+        <p class="case-study-highlight" style="margin-top:0.4rem;">
+          <strong>Longer term:</strong> The clarified rules, examples, and acceptance criteria were reused for other
+          customers and future releases, making it easier for support, QA, and engineering to spot similar issues
+          before they hit production.
+        </p>
+        <p class="case-study-highlight" style="margin-top:0.4rem;">
+          <strong>Skills in play:</strong> requirements gathering, stakeholder communication, root cause analysis,
+          SQL + API investigation, and coordinating data cleanup without interrupting day-to-day operations.
+        </p>
+      </div>
+    </div>
+  </article>
+</section>
+
+      <!-- Projects / additional examples -->
+      <section id="projects">
+        <p class="section-label">Additional work</p>
+        <h2 class="section-title">More examples of how I think.</h2>
+        <p class="section-description">
+          A few more slices of the kind of work I do around reporting,
+          compliance, and debugging — framed as problem → approach → outcome.
         </p>
 
         <div class="projects-grid">
           <article class="project-card">
-            <span class="project-chip">Compliance & reporting</span>
-            <h3 class="project-title">State education reporting workflow</h3>
-            <p class="project-meta">
-              Partnered with stakeholders to design reporting workflows that align
-              Alma SIS data with state education data systems.
+            <span class="project-chip">Reporting & workflows</span>
+            <h3 class="project-title">Reporting workflow redesign</h3>
+            <p class="project-meta"><strong>Problem:</strong> Teams were hitting
+              last-minute reporting fire drills and unclear error messages.</p>
+            <p class="project-impact">
+              <strong>Approach:</strong> Partnered with stakeholders to map
+              end-to-end workflows, clarify ownership, and move validation
+              earlier in the process.
             </p>
             <p class="project-impact">
-              Result: reduced last-minute submission issues and helped schools
-              avoid potential fines and funding losses by tightening data
-              validation and submission logic.
+              <strong>Result:</strong> Fewer last-minute crises and clearer
+              expectations across business, support, and engineering.
             </p>
             <div class="project-tags">
               <span class="project-tag">Requirements gathering</span>
-              <span class="project-tag">Compliance reporting</span>
               <span class="project-tag">Workflow design</span>
+              <span class="project-tag">Change management</span>
             </div>
           </article>
 
           <article class="project-card">
             <span class="project-chip">Debugging & data</span>
             <h3 class="project-title">Critical data issue remediation</h3>
-            <p class="project-meta">
-              Investigated and resolved complex data defects across SQL,
-              MongoDB, and API integrations impacting key reports.
+            <p class="project-meta"><strong>Problem:</strong> Key dashboards and
+              exports were misaligned with business rules, putting decisions and
+              downstream processes at risk.</p>
+            <p class="project-impact">
+              <strong>Approach:</strong> Reproduced defects across SQL queries
+              and integrations, identified the exact rule gaps, and documented
+              root causes with clear acceptance criteria.
             </p>
             <p class="project-impact">
-              Result: restored accurate reporting for impacted schools, prevented
-              revenue risk, and provided engineers with clear root-cause analysis
-              and acceptance criteria for long-term fixes.
+              <strong>Result:</strong> Restored trust in the numbers and gave
+              engineering a blueprint for permanent fixes instead of one-off
+              patches.
             </p>
             <div class="project-tags">
               <span class="project-tag">Root cause analysis</span>
@@ -1002,14 +1917,18 @@
 
           <article class="project-card">
             <span class="project-chip">Process & tooling</span>
-            <h3 class="project-title">Jira & QA workflow optimization</h3>
-            <p class="project-meta">
-              Used Jira and Postman to structure requirements, validate APIs,
-              and streamline QA workflows for reporting-related changes.
+            <h3 class="project-title">Backlog & QA workflow optimization</h3>
+            <p class="project-meta"><strong>Problem:</strong> Reporting-related
+              work was scattered across tickets, making it hard to see what was
+              at risk for upcoming milestones.</p>
+            <p class="project-impact">
+              <strong>Approach:</strong> Structured Jira workflows, tagged
+              reporting-impact issues, and used Postman collections to speed up
+              validation of API changes.
             </p>
             <p class="project-impact">
-              Result: improved visibility into reporting work, faster validation
-              cycles, and fewer surprises heading into state reporting deadlines.
+              <strong>Result:</strong> Better visibility, faster validation, and
+              fewer surprises leading up to key deadlines.
             </p>
             <div class="project-tags">
               <span class="project-tag">Jira</span>
@@ -1032,19 +1951,96 @@
         <div class="impact-strip">
           <div class="impact-item">
             <strong>Fewer fire drills</strong>
-            Fewer last-minute reporting crises through earlier checks, clearer
-            requirements, and better collaboration with engineers.
+            Fewer last-minute reporting or release crises through earlier
+            checks, clearer requirements, and better collaboration with
+            engineers.
           </div>
           <div class="impact-item">
             <strong>Cleaner data</strong>
-            More accurate submissions and dashboards by catching data issues,
-            validating edge cases, and tightening workflows.
+            More accurate submissions, dashboards, and exports by catching data
+            issues, validating edge cases, and tightening workflows.
           </div>
           <div class="impact-item">
             <strong>Happier stakeholders</strong>
             Stakeholders who understand what’s happening, why it matters, and
-            how fixes will protect funding and compliance.
+            how fixes will protect revenue, compliance, or customer trust.
           </div>
+        </div>
+      </section>
+
+      <!-- Mini tools -->
+      <section id="tools">
+        <p class="section-label">Mini tools</p>
+        <h2 class="section-title">Tiny utilities, big signal.</h2>
+        <p class="section-description">
+          These are intentionally simple, but they mirror the kind of logic I
+          apply when turning vague business rules into deterministic behavior.
+        </p>
+
+        <div class="tools-grid">
+          <!-- Tool 1: Impact vs effort priority score -->
+          <article class="tool-card">
+            <div class="tool-label">Prioritization helper</div>
+            <h3>Impact vs effort score</h3>
+            <p>
+              A quick way to turn “this feels important” into a rough score you
+              can use for backlog conversations.
+            </p>
+            <div class="tool-input-row">
+              <input
+                type="number"
+                id="impactInput"
+                placeholder="Impact (1–5)"
+                min="1"
+                max="5"
+                aria-label="Impact rating from 1 to 5" />
+              <input
+                type="number"
+                id="effortInput"
+                placeholder="Effort (1–5)"
+                min="1"
+                max="5"
+                aria-label="Effort rating from 1 to 5" />
+              <button type="button" id="priorityBtn" aria-label="Calculate priority score based on impact and effort">
+                Score it
+              </button>
+            </div>
+            <div class="tool-output" id="priorityOutput" aria-live="polite">
+              Enter impact and effort to calculate a simple priority score.
+            </div>
+          </article>
+
+          <!-- Tool 2: Simple ROI break-even calculator -->
+          <article class="tool-card">
+            <div class="tool-label">ROI-style example</div>
+            <h3>Break-even months calculator</h3>
+            <p>
+              A small helper for framing tradeoffs: given an upfront cost and a
+              monthly benefit, how long until the change pays for itself?
+            </p>
+            <div class="tool-input-row">
+              <input
+                type="number"
+                id="investmentInput"
+                placeholder="Upfront cost"
+                min="0"
+                aria-label="Upfront investment cost" />
+            </div>
+            <div class="tool-input-row">
+              <input
+                type="number"
+                id="monthlyBenefitInput"
+                placeholder="Monthly benefit/savings"
+                min="0"
+                aria-label="Monthly benefit or savings" />
+              <button type="button" id="roiBtn" aria-label="Calculate break-even months">
+                Calculate months
+              </button>
+            </div>
+            <div class="tool-output" id="roiOutput" aria-live="polite">
+              Provide a cost and monthly benefit to estimate break-even timing.
+            </div>
+          </article>
         </div>
       </section>
 
@@ -1066,6 +2062,15 @@
               stakeholders, and I’ll help connect the dots between data,
               systems, and people.
             </p>
+
+            <div class="hm-card" aria-label="Information for hiring managers">
+              <div class="hm-card-title">For hiring managers</div>
+              <ul>
+                <li>Comfortable owning a reporting/problem space, not just individual tickets.</li>
+                <li>Happy to join customer or stakeholder calls to translate business ↔ technical detail.</li>
+                <li>Prefer roles where I can both debug data and shape the process around it.</li>
+              </ul>
+            </div>
           </div>
           <div class="contact-list">
             <div class="contact-item">
@@ -1075,7 +2080,7 @@
                   nicholas_karn@yahoo.com
                 </div>
               </div>
-              <span style="font-size: 1rem;">✉️</span>
+              <span style="font-size: 1rem;" aria-hidden="true">✉️</span>
             </div>
 
             <div class="contact-item">
@@ -1085,19 +2090,20 @@
                   360-334-2363
                 </div>
               </div>
-              <span style="font-size: 1rem;">📞</span>
+              <span style="font-size: 1rem;" aria-hidden="true">📞</span>
             </div>
 
             <a class="contact-item"
                href="https://www.linkedin.com/in/nicholas-karn-51336615a/"
-               target="_blank" rel="noreferrer">
+               target="_blank" rel="noreferrer"
+               title="Open Nicholas Karn on LinkedIn">
               <div>
                 <div class="contact-label">LinkedIn</div>
                 <div class="contact-value">
                   linkedin.com/in/nicholas-karn-51336615a
                 </div>
               </div>
-              <span style="font-size: 1rem;">↗</span>
+              <span style="font-size: 1rem;" aria-hidden="true">↗</span>
             </a>
           </div>
         </div>
@@ -1110,7 +2116,7 @@
   </div>
 
   <script>
-    // Simple "copy email" helper
+    // Copy email
     document.getElementById("copyEmailBtn")?.addEventListener("click", function () {
       const emailText = document.getElementById("emailValue")?.textContent?.trim();
       if (!emailText) return;
@@ -1127,6 +2133,189 @@
         }
       );
     });
+
+    // Mode toggle
+    (function () {
+      const toggle = document.getElementById("modeToggle");
+      const label = document.getElementById("modeToggleLabel");
+      if (!toggle || !label) return;
+
+      toggle.addEventListener("click", () => {
+        document.body.classList.toggle("fun-mode");
+        const fun = document.body.classList.contains("fun-mode");
+        label.textContent = fun ? "Fun" : "Professional";
+      });
+    })();
+
+    // Talking avatar intro (AI audio + subtitles)
+    //
+    // Script used for the audio + on-screen captions:
+    //
+    // "Welcome to my portfolio!
+    // Hi, I’m Nick, a business analyst and reporting specialist.
+    // I help teams turn messy data and vague requirements into clear, reliable reporting and better decisions.
+    // This avatar is powered by AI text-to-speech, but the projects and experience you’ll see here are very real.
+    // Thanks for taking a look at my portfolio."
+    //
+    (function () {
+      const playBtn = document.getElementById("playIntroBtn");
+      const avatarVisual = document.getElementById("avatarVisual");
+      const statusDot = document.getElementById("avatarStatusDot");
+      const statusText = document.getElementById("avatarStatusText");
+      const playIcon = document.getElementById("playIntroIcon");
+      const playLabel = document.getElementById("playIntroLabel");
+      const subtitleEl = document.getElementById("avatarSubtitle");
+
+      if (!playBtn || !avatarVisual || !subtitleEl) return;
+
+      // Put avatar-intro-ai.m4a in the same folder as this HTML
+      const audio = new Audio("avatar-intro-ai.m4a");
+      let isPlaying = false;
+
+      const scriptLines = [
+        "Welcome to my portfolio!",
+        "Hi, I’m Nick, a business analyst and reporting specialist.",
+        "I help teams turn messy data and vague requirements into clear, reliable reporting and better decisions.",
+        "This avatar is powered by AI text-to-speech, but the projects and experience you’ll see here are very real.",
+        "Thanks for taking a look at my portfolio."
+      ];
+
+      // Rough timing breakpoints (0–1). Adjust if needed after listening.
+      const breakpoints = [0, 0.17, 0.40, 0.70, 0.90];
+
+      function setSubtitle(index) {
+        subtitleEl.textContent = scriptLines[index] || "";
+      }
+
+      function setStatePlaying() {
+        isPlaying = true;
+        avatarVisual.classList.add("is-speaking");
+        if (statusDot) statusDot.style.backgroundColor = "#22c55e";
+        if (statusText) statusText.textContent = "Speaking...";
+        if (playIcon) playIcon.textContent = "⏸";
+        if (playLabel) playLabel.textContent = "Pause intro";
+        setSubtitle(0);
+      }
+
+      function setStateIdle() {
+        isPlaying = false;
+        avatarVisual.classList.remove("is-speaking");
+        if (statusDot) statusDot.style.backgroundColor = "#9ca3af";
+        if (statusText) statusText.textContent = "Idle";
+        if (playIcon) playIcon.textContent = "▶";
+        if (playLabel) playLabel.textContent = "Play intro";
+        setSubtitle(0);
+      }
+
+      audio.addEventListener("timeupdate", () => {
+        if (!audio.duration) return;
+        const progress = audio.currentTime / audio.duration;
+        let idx = 0;
+        for (let i = 0; i < breakpoints.length; i++) {
+          if (progress >= breakpoints[i]) idx = i;
+        }
+        setSubtitle(idx);
+      });
+
+      audio.addEventListener("ended", () => {
+        setStateIdle();
+      });
+
+      playBtn.addEventListener("click", () => {
+        if (!audio) return;
+
+        if (!isPlaying) {
+          audio.currentTime = 0;
+          audio.play()
+            .then(() => setStatePlaying())
+            .catch(() => {
+              // If autoplay is blocked, still show the speaking state
+              setStatePlaying();
+            });
+        } else {
+          audio.pause();
+          setStateIdle();
+        }
+      });
+    })();
+
+    // Pipeline interactions
+    (function () {
+      const steps = Array.from(document.querySelectorAll(".pipeline-step"));
+      const nodes = Array.from(document.querySelectorAll(".pipeline-node"));
+
+      if (!steps.length || !nodes.length) return;
+
+      function updateActive(stepNumber) {
+        steps.forEach(btn => {
+          btn.classList.toggle("active", btn.dataset.step === stepNumber);
+        });
+        nodes.forEach(node => {
+          node.classList.toggle("active", node.dataset.step === stepNumber);
+        });
+      }
+
+      steps.forEach(btn => {
+        btn.addEventListener("click", () => {
+          const stepNumber = btn.dataset.step;
+          if (!stepNumber) return;
+          updateActive(stepNumber);
+        });
+      });
+    })();
+
+    // Mini tool: Impact vs effort priority score
+    (function () {
+      const impactInput = document.getElementById("impactInput");
+      const effortInput = document.getElementById("effortInput");
+      const btn = document.getElementById("priorityBtn");
+      const output = document.getElementById("priorityOutput");
+      if (!impactInput || !effortInput || !btn || !output) return;
+
+      btn.addEventListener("click", () => {
+        const impact = Number(impactInput.value.trim());
+        const effort = Number(effortInput.value.trim());
+
+        if (!impact || !effort || impact < 1 || effort < 1) {
+          output.innerHTML = "Use values from 1–5 for both impact and effort.";
+          return;
+        }
+
+        const score = Number((impact / effort).toFixed(2));
+        let label = "";
+        if (score >= 1.5) {
+          label = "High priority – strong impact for the effort.";
+        } else if (score >= 1) {
+          label = "Medium priority – reasonable impact for the effort.";
+        } else {
+          label = "Lower priority – consider batching or deferring.";
+        }
+
+        output.innerHTML = `<strong>Score: ${score}</strong> — ${label}`;
+      });
+    })();
+
+    // Mini tool: ROI break-even calculator
+    (function () {
+      const investmentInput = document.getElementById("investmentInput");
+      const monthlyBenefitInput = document.getElementById("monthlyBenefitInput");
+      const btn = document.getElementById("roiBtn");
+      const output = document.getElementById("roiOutput");
+      if (!investmentInput || !monthlyBenefitInput || !btn || !output) return;
+
+      btn.addEventListener("click", () => {
+        const cost = Number(investmentInput.value.trim());
+        const benefit = Number(monthlyBenefitInput.value.trim());
+
+        if (isNaN(cost) || isNaN(benefit) || cost <= 0 || benefit <= 0) {
+          output.innerHTML = "Enter a positive upfront cost and monthly benefit.";
+          return;
+        }
+
+        const months = Math.ceil(cost / benefit);
+        output.innerHTML = `<strong>Approx. ${months} month(s)</strong> to break even on this change.`;
+      });
+    })();
   </script>
 </body>
 </html>
